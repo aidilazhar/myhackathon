@@ -61,19 +61,19 @@ class Welcome extends CI_Controller {
 
 
 if($roption == 1){
-	$apiurl = 'http://139.59.124.53:8080/api/query/'.$searchid;
+	$apiurl = 'http://localhost:8080/api/query/'.$searchid;
 	$payload = array();
 	$method = 'GET';
 }
 
 if($roption == 2){
-	$apiurl = 'http://139.59.124.53:8080/api/addcar';
+	$apiurl = 'http://localhost:8080/api/addcar';
 	$payload = array("carid"=>$carid,"owner"=>$owner,"make"=>$make,"model"=>$model,"colour"=>$colour,"owner"=>$owner,"image"=>$base64image,"video"=>$base64image);
 	$method = 'POST';
 }
 
 if($roption == 3){
-	$apiurl = 'http://139.59.124.53:8080/api/changeowner/'.$carid;
+	$apiurl = 'http://localhost:8080/api/changeowner/'.$carid;
 	$payload = array("owner"=>$owner);
 	$method = 'PUT';
 }
