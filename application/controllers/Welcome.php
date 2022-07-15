@@ -20,15 +20,12 @@ class Welcome extends CI_Controller {
 	 * 
 	 */
 
-	 
+
 	public function index()
 	{
-		$this->load->view('welcome_message');
-	}
-   
-	public function formpost()
-    {
-    
+
+	if($_POST){
+
 	$roption =  $this->input->post('roption');
 	$searchid = $this->input->post('searchid');
 	$carid = $this->input->post('carid');
@@ -37,6 +34,8 @@ class Welcome extends CI_Controller {
 	$colour = $this->input->post('colour');
 	$owner = $this->input->post('owner');
 	$base64image = '';
+
+	
 	
 	$config = array(
 		'upload_path' => APPPATH ."uploads/",
@@ -57,23 +56,28 @@ class Welcome extends CI_Controller {
 		else
 		{
 		$error = array('error' => $this->upload->display_errors());
-        print_r($error);
 		}
 		
-die;
+
 
 if($roption == 1){
 	$apiurl = 'http://139.59.124.53:8080/api/query/'.$searchid;
-
+	$payload = array();
+	$method = 'GET';
 }
 
 if($roption == 2){
 	$apiurl = 'http://139.59.124.53:8080/api/addcar';
+	$payload = array("carid"=>$carid,"owner"=>$owner,"make"=>$make,"model"=>$model,"colour"=>$colour,"owner"=>$owner,"image"=>$base64image,"video"=>$base64image);
+	$method = 'POST';
 }
 
 if($roption == 3){
 	$apiurl = 'http://139.59.124.53:8080/api/changeowner/'.$carid;
+	$payload = array("owner"=>$owner);
+	$method = 'PUT';
 }
+
 
 
 	$curl = curl_init();
@@ -86,26 +90,23 @@ if($roption == 3){
         CURLOPT_TIMEOUT => 0,
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => 'POST',
-        CURLOPT_POSTFIELDS =>'{
-	        "carid": "CAR100",
-	        "make": "Honda",
-	        "model": "Accord",
-	        "colour": "black",
-	        "owner": "Tom",
-	        "image": "Tom",
-	        "video": "Tom",
-		}',
+        CURLOPT_CUSTOMREQUEST => $method,
+        CURLOPT_POSTFIELDS => json_encode($payload),
        CURLOPT_HTTPHEADER => array(
        'Content-Type: application/json'
 	),
 ));
 
-$response = curl_exec($curl);
+         $response = curl_exec($curl);
 
-curl_close($curl);
-echo $response;
-
-
-    }
+         curl_close($curl);
+         $data['result'] = $response;
+		 $this->session->set_flashdata('message_name', $response);
+		 redirect("welcome");
+         //$this->load->view('welcome_message', $data);
+	 
+        } else {
+	       $this->load->view('welcome_message');
+       }
+     }
 }

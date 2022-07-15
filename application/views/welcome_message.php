@@ -33,7 +33,7 @@
             <li class="list-group-item d-flex justify-content-between bg-light">
               <div class="text-success">
               
-                <small>Success</small>
+                <small><?php echo $this->session->flashdata('message_name');  ?></small>
               </div>
        
             </li>
@@ -43,10 +43,10 @@
         </div>
         <div class="col-md-8 order-md-1">
 		<h4 class="mb-3">Test Application</h4>
-		<form action="index.php/welcome/formpost" method="POST" enctype="multipart/form-data">
+		<form action="index.php/welcome/" method="POST" enctype="multipart/form-data">
 
 		<div class="form-check">
-             <input class="form-check-input" type="radio" name="roption" id="flexRadioDefault1" value = "1" checked>
+             <input class="form-check-input" type="radio" name="roption" id="flexRadioDefault1" value = "1">
              <label class="form-check-label" for="flexRadioDefault1">Query</label>
              </div>
         <div class="form-check">
@@ -63,7 +63,7 @@
 
 			<div class="mb-3">
         
-              <input type="text" class="form-control" id="searchid" name="searchid" placeholder="Search ID" required>
+              <input type="text" class="form-control" id="searchid" name="searchid" placeholder="Search ID" >
               <div class="invalid-feedback">
                 Please enter your Car ID.
               </div>
@@ -72,13 +72,13 @@
        
             <div class="row">
               <div class="col-md-6 mb-3">
-                <input type="text" class="form-control" id="carid" name="carid" placeholder="CAR ID" value="" required>
+                <input type="text" class="form-control" id="carid" name="carid" placeholder="CAR ID"  >
                 <div class="invalid-feedback">
 				Valid CARID is required.
                 </div>
               </div>
               <div class="col-md-6 mb-3">
-                <input type="text" class="form-control" id="owner" placeholder="Owner" value="" required>
+                <input type="text" class="form-control" id="owner" name="owner" placeholder="Owner"   >
                 <div class="invalid-feedback">
                   Valid Owner is required.
                 </div>
@@ -88,7 +88,7 @@
             <div class="row">
               <div class="col-md-4 mb-4">
                 <label for="country">Make</label>
-                <select class="custom-select d-block w-100" id="make" name="make" required>
+                <select class="custom-select d-block w-100" id="make" name="make" >
                   <option value="">Choose...</option>
                   <option value="honda">Honda</option>
                 </select>
@@ -98,7 +98,7 @@
               </div>
               <div class="col-md-4 mb-4">
                 <label for="state">Model</label>
-                <select class="custom-select d-block w-100" id="model" name="model" required>
+                <select class="custom-select d-block w-100" id="model" name="model" >
                   <option value="">Choose...</option>
                   <option value="civic">Civic</option>
                 </select>
@@ -109,7 +109,7 @@
 
 			  <div class="col-md-4 mb-4">
                 <label for="state">Colour</label>
-                <select class="custom-select d-block w-100" id="colour" name="colour" required>
+                <select class="custom-select d-block w-100" id="colour" name="colour" >
                   <option value="">Choose...</option>
                   <option value="black">Black</option>
                 </select>
