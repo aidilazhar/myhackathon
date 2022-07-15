@@ -60,36 +60,45 @@ class Welcome extends CI_Controller {
         print_r($error);
 		}
 		
-		
+die;
 
+if($roption == 1){
+	$apiurl = 'http://139.59.124.53:8080/api/query/'.$searchid;
 
-	die;
+}
 
+if($roption == 2){
+	$apiurl = 'http://139.59.124.53:8080/api/addcar';
+}
+
+if($roption == 3){
+	$apiurl = 'http://139.59.124.53:8080/api/changeowner/'.$carid;
+}
 
 
 	$curl = curl_init();
 
-curl_setopt_array($curl, array(
-  CURLOPT_URL => 'http://139.59.124.53:8080/api/addcar',
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => '',
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 0,
-  CURLOPT_FOLLOWLOCATION => true,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => 'POST',
-  CURLOPT_POSTFIELDS =>'{
-	"carid": "CAR100",
-	"make": "Honda",
-	"model": "Accord",
-	"colour": "black",
-	"owner": "Tom",
-	"image": "Tom",
-	"video": "Tom",
-}',
-  CURLOPT_HTTPHEADER => array(
-    'Content-Type: application/json'
-  ),
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => $apiurl,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS =>'{
+	        "carid": "CAR100",
+	        "make": "Honda",
+	        "model": "Accord",
+	        "colour": "black",
+	        "owner": "Tom",
+	        "image": "Tom",
+	        "video": "Tom",
+		}',
+       CURLOPT_HTTPHEADER => array(
+       'Content-Type: application/json'
+	),
 ));
 
 $response = curl_exec($curl);
@@ -97,6 +106,6 @@ $response = curl_exec($curl);
 curl_close($curl);
 echo $response;
 
-    die;
+
     }
 }
