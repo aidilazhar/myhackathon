@@ -91,6 +91,8 @@
                 <select class="custom-select d-block w-100" id="make" name="make" >
                   <option value="">Choose...</option>
                   <option value="honda">Honda</option>
+				  <option value="audi">Audi</option>
+				  <option value="bmw">BMW</option>
                 </select>
                 <div class="invalid-feedback">
                   Please select a valid country.
@@ -101,6 +103,8 @@
                 <select class="custom-select d-block w-100" id="model" name="model" >
                   <option value="">Choose...</option>
                   <option value="civic">Civic</option>
+				  <option value="Q7">Q7</option>
+				  <option value="3 Series">3 Series</option>
                 </select>
                 <div class="invalid-feedback">
                   Please provide a valid Model
@@ -112,6 +116,9 @@
                 <select class="custom-select d-block w-100" id="colour" name="colour" >
                   <option value="">Choose...</option>
                   <option value="black">Black</option>
+				  <option value="yellow">Yellow</option>
+				  <option value="red">Red</option>
+				  <option value="blue">Blue</option>
                 </select>
                 <div class="invalid-feedback">
                   Please provide a valid state.
