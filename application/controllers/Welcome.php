@@ -29,15 +29,14 @@ class Welcome extends CI_Controller {
 	public function formpost()
     {
     
-	echo $this->input->post('searchid');
-	echo $this->input->post('carid');
-	echo $this->input->post('make');
-	echo $this->input->post('model');
-	echo $this->input->post('colour');
-	echo $this->input->post('owner');
-	echo $this->input->post('image');
-	echo $this->input->post('video');
-	
+	$roption =  $this->input->post('roption');
+	$searchid = $this->input->post('searchid');
+	$carid = $this->input->post('carid');
+	$make = $this->input->post('make');
+	$model = $this->input->post('model');
+	$colour = $this->input->post('colour');
+	$owner = $this->input->post('owner');
+	$base64image = '';
 	
 	$config = array(
 		'upload_path' => APPPATH ."uploads/",
@@ -51,6 +50,9 @@ class Welcome extends CI_Controller {
 		if($this->upload->do_upload())
 		{
 		$data = array('upload_data' => $this->upload->data());
+
+		$imagedata = file_get_contents($data['upload_data']['full_path']);
+		$base64image = base64_encode($imagedata);
 		}
 		else
 		{
@@ -58,7 +60,9 @@ class Welcome extends CI_Controller {
         print_r($error);
 		}
 		
-	
+		
+
+
 	die;
 
 

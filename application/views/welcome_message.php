@@ -46,15 +46,15 @@
 		<form action="index.php/welcome/formpost" method="POST" enctype="multipart/form-data">
 
 		<div class="form-check">
-             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+             <input class="form-check-input" type="radio" name="roption" id="flexRadioDefault1" value = "1" checked>
              <label class="form-check-label" for="flexRadioDefault1">Query</label>
              </div>
         <div class="form-check">
-             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+             <input class="form-check-input" type="radio" name="roption" id="flexRadioDefault2" value = "2" >
              <label class="form-check-label" for="flexRadioDefault2">Create</label>
             </div>
 			<div class="form-check">
-             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+             <input class="form-check-input" type="radio" name="roption" id="flexRadioDefault3" value = "3">
              <label class="form-check-label" for="flexRadioDefault2">Update</label>
             </div>
             <hr class="mb-4">
