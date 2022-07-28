@@ -173,11 +173,15 @@ echo $jsondata['model'];
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyCmvdjPpeWpjDzVY2YXSK16z2NtZxnT_-k" 
           type="text/javascript"></script>
 
-    <?php if (isset($jsondata['owner'])): ?>
+   <?php if (isset($jsondata['owner'])): ?>
           <img src="data:image/png;base64, <?php echo $jsondata['owner']; ?> ">
     <?php endif; ?>
 
   <div id="map" style="width: 100%; height: 400px;"></div>
+
+  <?php if (isset($jsondata['model'])): ?>
+
+  <?php echo $jsondata['model']; ?>
 
   <script type="text/javascript">
     var locations = [
@@ -208,6 +212,7 @@ echo $jsondata['model'];
       })(marker, i));
     }
   </script>
+   <?php endif; ?>
 
 
 
