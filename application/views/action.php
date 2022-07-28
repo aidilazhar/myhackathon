@@ -53,7 +53,15 @@
 <br><br>
 <div>Results
 <div class="alert alert-primary" role="alert">
-<?php echo $this->session->flashdata('message_name');  ?>
+<?php 
+
+$result = $this->session->flashdata('message_name'); 
+echo $result;
+
+$jsondata = json_decode($result, true);
+print_r($jsondata);
+
+?>
 </div>
 
       <div class="row" id="ops">
