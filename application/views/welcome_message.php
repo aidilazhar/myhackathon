@@ -17,31 +17,44 @@
 
   <body class="bg-light">
 
+
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="#">GrowHub</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Info</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Ingredients / Nutritions</a>
+        </li>
+ 
+      </ul>
+  
+    </div>
+  </div>
+</nav>
+<br>
     <div class="container">
-      <div class="py-5 text-center">
-        <h2>GrowHub BlockChain</h2>
-     </div>
+
+<br><br>
+    <div class="d-grid gap-2">
+  <button class="btn btn-primary" type="button">FARM</button>
+  <button class="btn btn-primary" type="button">LABORATORY</button>
+  <button class="btn btn-primary" type="button">FACTORY</button>
+  <button class="btn btn-primary" type="button">LOGISTICS</button>
+  <button class="btn btn-primary" type="button">RETAILS</button>
+</div>
+
 
       <div class="row">
-        <div class="col-md-4 order-md-2 mb-4">
-          <h4 class="d-flex justify-content-between align-items-center mb-3">
-            <span class="text-muted">Result</span>
-            <span class="badge badge-secondary badge-pill">3</span>
-          </h4>
-          <ul class="list-group mb-3">
-           
-            <li class="list-group-item d-flex justify-content-between bg-light">
-              <div class="text-success">
-              
-                <small><?php echo $this->session->flashdata('message_name');  ?></small>
-              </div>
-       
-            </li>
-            
-          </ul>
-		 
-        </div>
-        <div class="col-md-8 order-md-1">
+      <?php echo $this->session->flashdata('message_name');  ?>
+        <div class="col-md-12 order-md-1">
 		<h4 class="mb-3">Test Application</h4>
 		<form action="index.php/welcome/" method="POST" enctype="multipart/form-data">
 
@@ -139,6 +152,32 @@
 
  
     </div>
+
+
+  <nav class="navbar navbar-expand-lg fixed-bottom navbar-dark bg-primary">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="#">Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Batch Lists</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Map</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Search</a>
+        </li>
+ 
+      </ul>
+  
+    </div>
+  </div>
+</nav>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
