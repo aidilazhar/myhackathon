@@ -181,7 +181,7 @@ echo $jsondata['model'];
 
 
 
- 
+  <?php if (!empty($jsondata['model'])): ?>
 
   <script type="text/javascript">
     var locations = [
@@ -213,7 +213,7 @@ echo $jsondata['model'];
     }
   </script>
 
-
+<?php endif; ?>
 
 
 
