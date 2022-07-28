@@ -50,10 +50,14 @@
   <button class="btn btn-primary" id="form" type="button">LOGISTICS</button>
   <button class="btn btn-primary" id="form" type="button">RETAILS</button>
 </div>
-
+<br><br>
+<div>Results
+<div class="alert alert-primary" role="alert">
+<?php echo $this->session->flashdata('message_name');  ?>
+</div>
 
       <div class="row" id="ops">
-      <?php echo $this->session->flashdata('message_name');  ?>
+
         <div class="col-md-12 order-md-1">
 		<h4 class="mb-3">Blockchain Application</h4>
 		<form action="index.php/welcome/" method="POST" enctype="multipart/form-data">
@@ -154,9 +158,9 @@
     </div>
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyCmvdjPpeWpjDzVY2YXSK16z2NtZxnT_-k" 
           type="text/javascript"></script>
-</head> 
-<body>
-  <div id="map" style="width: 500px; height: 400px;"></div>
+
+
+  <div id="map" style="width: 100%; height: 400px;"></div>
 
   <script type="text/javascript">
     var locations = [
@@ -241,6 +245,6 @@ $(document).ready(function(){
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
+<br><br><br><br><br><br>
   </body>
 </html>
