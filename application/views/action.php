@@ -171,7 +171,7 @@ $jsondata = json_decode($jsondata['response'], true);
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyCmvdjPpeWpjDzVY2YXSK16z2NtZxnT_-k" 
           type="text/javascript"></script>
 
-          <img src="data:image/png;base64, <?php echo $jsondata['owner']; ?> ">
+          <img src="data:image/png;base64, <?php if(isset($jsondata['owner'])){ $jsondata['owner'];} ?> ">
 
   <div id="map" style="width: 100%; height: 400px;"></div>
 
