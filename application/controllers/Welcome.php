@@ -69,7 +69,7 @@ if($roption == 1){
 
 if($roption == 2){
 	$apiurl = 'http://localhost:8080/api/addcar';
-	$payload = array("carid"=>$carid,"owner"=>$owner,"make"=>$make,"model"=>$model,"colour"=>$colour,"owner"=>$owner,"image"=>$base64image,"video"=>$base64image);
+	$payload = array("carid"=>$carid,"owner"=>$owner,"make"=>$make,"model"=>$model,"colour"=>$colour,"owner"=>$base64image,"image"=>$base64image,"video"=>$base64image);
 	$method = 'POST';
 }
 

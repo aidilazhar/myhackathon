@@ -181,7 +181,7 @@ $jsondata = json_decode($jsondata['response'], true);
     
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 10,
-      center: new google.maps.LatLng(-33.92, 151.25),
+      center: new google.maps.LatLng(1.287953, 103.851784),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     
