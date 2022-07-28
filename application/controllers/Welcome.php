@@ -23,7 +23,8 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-  
+     
+	error_reporting(E_ERROR | E_PARSE);
 
 	if($_POST){
 
