@@ -54,8 +54,10 @@
 <div>Results
 <div class="alert alert-primary" role="alert">
 <?php 
-if(isset($result)){
+
 $result = $this->session->flashdata('message_name'); 
+if(isset($result)){
+
 echo $result;
 
 $jsondata = json_decode($result, true);
