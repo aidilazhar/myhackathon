@@ -52,7 +52,7 @@
 </div>
 
 
-      <div class="row" id="ops" style="display:none">
+      <div class="row" id="ops">
       <?php echo $this->session->flashdata('message_name');  ?>
         <div class="col-md-12 order-md-1">
 		<h4 class="mb-3">Blockchain Application</h4>
