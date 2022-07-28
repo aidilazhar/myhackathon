@@ -173,7 +173,7 @@ echo $jsondata['model'];
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyCmvdjPpeWpjDzVY2YXSK16z2NtZxnT_-k" 
           type="text/javascript"></script>
 
-   <?php if (isset($jsondata['owner'])): ?>
+   <?php if (!empty($jsondata['owner'])): ?>
           <img src="data:image/png;base64, <?php echo $jsondata['owner']; ?> ">
     <?php endif; ?>
 
@@ -181,11 +181,11 @@ echo $jsondata['model'];
 
   <?php if (isset($jsondata['model'])): ?>
 
-  <?php echo $jsondata['model']; ?>
+ 
 
   <script type="text/javascript">
     var locations = [
-      ['Bondi Beach', <?php echo $jsondata['model']; ?> ]
+      ['Bondi Beach', '-33.890542,151.274856,4' ]
     ];
     
     var map = new google.maps.Map(document.getElementById('map'), {
