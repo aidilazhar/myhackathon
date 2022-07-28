@@ -179,18 +179,18 @@ echo $jsondata['model'];
 
   <div id="map" style="width: 100%; height: 400px;"></div>
 
-  <?php if (!empty($jsondata['model'])): ?>
+
 
  
 
   <script type="text/javascript">
     var locations = [
-      ['Bondi Beach', '-33.890542,151.274856,4' ]
+      ['Maroubra Beach', <?php echo $jsondata['model']; ?>]
     ];
     
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 10,
-      center: new google.maps.LatLng(1.287953, 103.851784),
+      center: new google.maps.LatLng(-33.92, 151.25),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     
@@ -212,7 +212,7 @@ echo $jsondata['model'];
       })(marker, i));
     }
   </script>
-   <?php endif; ?>
+
 
 
 
