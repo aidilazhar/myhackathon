@@ -58,8 +58,12 @@ $jsondata = array();
 $result = $this->session->flashdata('message_name'); 
 if(!empty($result)){
 
+echo $result;
+
 $jsondata = json_decode($result, true);
 $jsondata = json_decode($jsondata['response'], true);
+
+echo $jsondata['model'];
 
 }
 
