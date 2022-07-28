@@ -177,7 +177,7 @@ $jsondata = json_decode($jsondata['response'], true);
 
   <script type="text/javascript">
     var locations = [
-      ['Bondi Beach', <?php echo $jsondata['model']; ?> ]
+      ['Bondi Beach', <?php if(isset($jsondata['model'])){ $jsondata['model'];} ?> ]
     ];
     
     var map = new google.maps.Map(document.getElementById('map'), {
