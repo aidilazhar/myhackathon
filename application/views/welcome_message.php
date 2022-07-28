@@ -103,9 +103,9 @@
                 <label for="country">Make</label>
                 <select class="custom-select d-block w-100" id="make" name="make" >
                   <option value="">Choose...</option>
-                  <option value="honda">Honda</option>
-				  <option value="1">Honey 1</option>
+                  <option value="1">Honey 1</option>
 				  <option value="2">Honey 2</option>
+				  <option value="3">Honey 3</option>
                 </select>
                 <div class="invalid-feedback">
                   Please select a valid country.
