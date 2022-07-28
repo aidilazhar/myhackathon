@@ -44,7 +44,7 @@
     <?php echo $this->session->flashdata('message_name');  ?>
 <br><br>
     <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">FARM</button>
+  <button class="btn btn-primary" type="button">FARM 1</button>
   <button class="btn btn-primary" type="button">LABORATORY</button>
   <button class="btn btn-primary" type="button">FACTORY</button>
   <button class="btn btn-primary" type="button">LOGISTICS</button>

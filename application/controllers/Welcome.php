@@ -23,11 +23,7 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-         $this->load->view('home');
-	}
-
-	public function actions()
-	{
+  
 
 	if($_POST){
 
@@ -107,8 +103,8 @@ if($roption == 3){
          curl_close($curl);
          $data['result'] = $response;
 		 $this->session->set_flashdata('message_name', $response);
-		 //redirect("http://139.59.124.53/growhub/");
-		 $this->load->view('action');
+		 redirect("http://139.59.124.53/growhub/");
+
          //$this->load->view('welcome_message', $data);
 	 
         } else {
