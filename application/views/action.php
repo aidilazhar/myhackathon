@@ -133,9 +133,9 @@ echo $jsondata['model'];
                 <label for="state">Location</label>
                 <select class="custom-select d-block w-100" id="model" name="model" >
                   <option value="">Choose...</option>
-                  <option value="-33.890542,151.274856,4">Bondi Beach</option>
-				  <option value="-33.923036,151.259052,5">Cronulla Beach</option>
-				  <option value="-33.80010128657071,151.28747820854187,2">Coogee Beach</option>
+                  <option value="-33.890542, 151.274856, 4">Bondi Beach</option>
+				  <option value="-33.923036, 151.259052, 5">Cronulla Beach</option>
+				  <option value="-33.80010128657071, 151.28747820854187, 2">Coogee Beach</option>
                 </select>
                 <div class="invalid-feedback">
                   Please provide a valid Model
