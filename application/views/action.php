@@ -12,7 +12,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
 
   <body class="bg-light">
@@ -43,16 +43,16 @@
     <div class="container">
 
 <br><br>
-    <div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">FARM</button>
-  <button class="btn btn-primary" type="button">LABORATORY</button>
-  <button class="btn btn-primary" type="button">FACTORY</button>
-  <button class="btn btn-primary" type="button">LOGISTICS</button>
-  <button class="btn btn-primary" type="button">RETAILS</button>
+    <div class="d-grid gap-2" id="forms">
+  <button class="btn btn-primary" id="form" type="button">FARM</button>
+  <button class="btn btn-primary" id="form" type="button">LABORATORY</button>
+  <button class="btn btn-primary" id="form" type="button">FACTORY</button>
+  <button class="btn btn-primary" id="form" type="button">LOGISTICS</button>
+  <button class="btn btn-primary" id="form" type="button">RETAILS</button>
 </div>
 
 
-      <div class="row">
+      <div class="row" id="ops" style="display:none">
       <?php echo $this->session->flashdata('message_name');  ?>
         <div class="col-md-12 order-md-1">
 		<h4 class="mb-3">Blockchain Application</h4>
@@ -115,9 +115,9 @@
                 <label for="state">Location</label>
                 <select class="custom-select d-block w-100" id="model" name="model" >
                   <option value="">Choose...</option>
-                  <option value="bondi-beach">Bondi Beach</option>
-				  <option value="cronulla-beach">Cronulla Beach</option>
-				  <option value="coogee-beach">Coogee Beach</option>
+                  <option value="-33.890542,151.274856,4">Bondi Beach</option>
+				  <option value="-33.923036,151.259052,5">Cronulla Beach</option>
+				  <option value="-33.80010128657071,151.28747820854187,2">Coogee Beach</option>
                 </select>
                 <div class="invalid-feedback">
                   Please provide a valid Model
@@ -221,6 +221,19 @@
     </div>
   </div>
 </nav>
+
+
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  $("#form").click(function(){
+    $("#ops").toggle();
+    $("#forms").toggle();
+  });
+});
+</script>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
