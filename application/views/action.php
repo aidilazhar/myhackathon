@@ -59,7 +59,9 @@ $result = $this->session->flashdata('message_name');
 echo $result;
 
 $jsondata = json_decode($result, true);
+echo "<pre>";
 print_r($jsondata);
+echo "</pre>";
 
 ?>
 </div>
