@@ -171,13 +171,13 @@ $jsondata = json_decode($jsondata['response'], true);
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyCmvdjPpeWpjDzVY2YXSK16z2NtZxnT_-k" 
           type="text/javascript"></script>
 
-          <img src="data:image/png;base64, <?php if(isset($jsondata['owner'])){ echo $jsondata['owner'];} ?> ">
+          <img src="data:image/png;base64, <?php echo $jsondata['owner']; ?> ">
 
   <div id="map" style="width: 100%; height: 400px;"></div>
 
   <script type="text/javascript">
     var locations = [
-      ['Bondi Beach', <?php if(isset($jsondata['model'])){ echo $jsondata['model'];} ?> ]
+      ['Bondi Beach', <?php echo $jsondata['model']; ?> ]
     ];
     
     var map = new google.maps.Map(document.getElementById('map'), {
