@@ -54,6 +54,7 @@
 <div>Results
 <div class="alert alert-primary" role="alert">
 <?php echo $this->session->flashdata('message_name');  ?>
+<?php print_r($result); ?>
 </div>
 
       <div class="row" id="ops">
