@@ -60,9 +60,8 @@ echo $result;
 
 $jsondata = json_decode($result, true);
 $jsondata = json_decode($jsondata['response'], true);
-echo "<pre>";
-print_r($jsondata);
-echo "</pre>";
+echo $jsondata['model'];
+
 
 ?>
 </div>
