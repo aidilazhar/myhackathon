@@ -176,7 +176,7 @@ $jsondata = json_decode($jsondata['response'], true);
 
   <script type="text/javascript">
     var locations = [
-      ['Bondi Beach', -33.890542, 151.274856, 4],
+      ['Bondi Beach', <?php echo $jsondata['model']; ?> ],
       ['Coogee Beach', -33.923036, 151.259052, 5],
       ['Cronulla Beach', -34.028249, 151.157507, 3],
       ['Manly Beach', -33.80010128657071, 151.28747820854187, 2],
