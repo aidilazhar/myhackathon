@@ -56,7 +56,7 @@
 <?php 
 
 $result = $this->session->flashdata('message_name'); 
-if(isset($result)){
+if(!empty($result)){
 
 echo $result;
 
