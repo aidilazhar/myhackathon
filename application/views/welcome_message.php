@@ -112,12 +112,12 @@
                 </div>
               </div>
               <div class="col-md-4 mb-4">
-                <label for="state">Model</label>
+                <label for="state">Location</label>
                 <select class="custom-select d-block w-100" id="model" name="model" >
                   <option value="">Choose...</option>
-                  <option value="civic">Civic</option>
-				  <option value="Q7">Q7</option>
-				  <option value="3 Series">3 Series</option>
+                  <option value="bondi-beach">Bondi Beach</option>
+				  <option value="cronulla-beach">Cronulla Beach</option>
+				  <option value="coogee-beach">Coogee Beach</option>
                 </select>
                 <div class="invalid-feedback">
                   Please provide a valid Model
