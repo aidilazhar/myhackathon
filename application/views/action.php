@@ -58,8 +58,6 @@ $jsondata = array();
 $result = $this->session->flashdata('message_name'); 
 if(!empty($result)){
 
-echo $result;
-
 $jsondata = json_decode($result, true);
 $jsondata = json_decode($jsondata['response'], true);
 
@@ -171,7 +169,7 @@ $jsondata = json_decode($jsondata['response'], true);
     <script src="http://maps.google.com/maps/api/js?key=AIzaSyCmvdjPpeWpjDzVY2YXSK16z2NtZxnT_-k" 
           type="text/javascript"></script>
 
-          <img src="data:image/png;base64, <?php if(isset($jsondata['owner'])){ echo $jsondata['owner'];} ?> ">
+          <img src="data:image/png;base64, <?php echo $jsondata['owner']; ?> ">
 
   <div id="map" style="width: 100%; height: 400px;"></div>
 
