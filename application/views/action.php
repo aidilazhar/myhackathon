@@ -8,7 +8,7 @@
     <meta name="author" content="">
  
 
-    <title>GrowHub BlockChain</title>
+    <title>MYHACKATHON</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
 
@@ -20,7 +20,7 @@
 
   <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
   <div class="container-fluid">
-  <a class="navbar-brand" href="#">GrowHub</a>
+  <a class="navbar-brand" href="#">MYHACKATHON</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -55,15 +55,23 @@
 <div class="alert alert-primary" role="alert">
 <?php 
 $jsondata = array();
-$result = $this->session->flashdata('message_name'); 
-if(!empty($result)){
+$message = $this->session->flashdata('message_name'); 
 
-echo $result;
+if(!empty($message) && $roption == 4){
+
+//echo $result;
+//echo $message;
 
 $jsondata = json_decode($result, true);
-$jsondata = json_decode($jsondata['response'], true);
 
-echo $jsondata['model'];
+
+print_r($jsondata);
+
+
+$jsondata = json_decode($jsondata['response'], true);
+echo "<pre>";
+print_r($jsondata);
+echo "</pre>";
 
 }
 
@@ -74,7 +82,7 @@ echo $jsondata['model'];
 
         <div class="col-md-12 order-md-1">
 		<h4 class="mb-3">Blockchain Application</h4>
-		<form action="index.php/welcome/" method="POST" enctype="multipart/form-data">
+		<form action="<?php echo base_url(); ?>myhackathon/index.php/welcome/action" method="POST" enctype="multipart/form-data">
 
 		<div class="form-check">
              <input class="form-check-input" type="radio" name="roption" id="flexRadioDefault1" value = "1">
@@ -87,6 +95,10 @@ echo $jsondata['model'];
 			<div class="form-check">
              <input class="form-check-input" type="radio" name="roption" id="flexRadioDefault3" value = "3">
              <label class="form-check-label" for="flexRadioDefault2">Update</label>
+            </div>
+      <div class="form-check">
+             <input class="form-check-input" type="radio" name="roption" id="flexRadioDefault4" value = "4">
+             <label class="form-check-label" for="flexRadioDefault2">All</label>
             </div>
             <hr class="mb-4">
 

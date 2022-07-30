@@ -20,11 +20,18 @@ class Welcome extends CI_Controller {
 	 * 
 	 */
 
-
-	public function index()
+	public function __construct()
 	{
-     
-	error_reporting(E_ERROR | E_PARSE);
+		parent::__construct();
+		$this->load->helper(array('url', 'html'));
+		$this->load->library(array('session', 'form_validation'));
+		$this->load->library('session');
+
+	    }
+	
+	function index()
+	{
+
 
 	if($_POST){
 
@@ -63,21 +70,27 @@ class Welcome extends CI_Controller {
 
 
 if($roption == 1){
-	$apiurl = 'http://localhost:8080/api/query/'.$searchid;
+	$apiurl = 'http://174.138.29.127:8181/api/query/'.$searchid;
 	$payload = array();
 	$method = 'GET';
 }
 
 if($roption == 2){
-	$apiurl = 'http://localhost:8080/api/addcar';
+	$apiurl = 'http://174.138.29.127:8181/api/addcar';
 	$payload = array("carid"=>$carid,"owner"=>$owner,"make"=>$make,"model"=>$model,"colour"=>$colour,"owner"=>$base64image,"image"=>$base64image,"video"=>$base64image);
 	$method = 'POST';
 }
 
 if($roption == 3){
-	$apiurl = 'http://localhost:8080/api/changeowner/'.$carid;
+	$apiurl = 'http://174.138.29.127:8181/api/changeowner/'.$carid;
 	$payload = array("owner"=>$owner);
 	$method = 'PUT';
+}
+
+if($roption == 4){
+	$apiurl = 'http://174.138.29.127:8181/api/queryallcars';
+	$payload = array();
+	$method = 'GET';
 }
 
 
@@ -102,11 +115,13 @@ if($roption == 3){
          $response = curl_exec($curl);
 
          curl_close($curl);
+		 $data['roption'] = $roption;
          $data['result'] = $response;
+		
 		 $this->session->set_flashdata('message_name', $response);
-		 redirect("http://139.59.124.53/growhub/");
+		 //redirect("http://localhost/myhackathon/index.php/welcome/action");
 
-         //$this->load->view('welcome_message', $data);
+         $this->load->view('action', $data);
 	 
         } else {
 	       $this->load->view('action');
