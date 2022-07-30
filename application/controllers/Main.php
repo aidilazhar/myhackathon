@@ -130,7 +130,7 @@ if($roption == 4){
          $this->load->view('action', $data);
 	 
         } else {
-	       $this->load->view('home');
+	       $this->load->view('action');
        }
      }
 
