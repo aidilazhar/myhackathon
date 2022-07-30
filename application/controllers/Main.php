@@ -34,6 +34,12 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('home');
 	}
+
+	function test()
+	{
+		echo "test";
+	}
+	
 	
 	function index()
 	{
