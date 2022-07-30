@@ -28,6 +28,12 @@ class Welcome extends CI_Controller {
 		$this->load->library('session');
 
 	    }
+
+
+	function index1()
+	{
+		$this->load->view('home', $data);
+	}
 	
 	function index()
 	{

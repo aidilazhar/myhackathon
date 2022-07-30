@@ -11,8 +11,19 @@
     <title>MYHACKATHON</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+	  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.2.4/css/fixedHeader.dataTables.min.css">. 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/fixedheader/3.2.4/js/dataTables.fixedHeader.min.js"></script>
+    <script type="text/javascript" class="init">  
+    $(document).ready(function() {
+    $('#example').DataTable( {
+      fixedHeader: true
+    } );
+  } );
+    </script>
   </head>
 
   <body class="bg-light">
@@ -42,22 +53,13 @@
 <br>
     <div class="container">
 
-<br><br>
-    <div class="d-grid gap-2" id="forms">
-  <button class="btn btn-primary" id="form" type="button">FARM</button>
-  <button class="btn btn-primary" id="form" type="button">LABORATORY</button>
-  <button class="btn btn-primary" id="form" type="button">FACTORY</button>
-  <button class="btn btn-primary" id="form" type="button">LOGISTICS</button>
-  <button class="btn btn-primary" id="form" type="button">RETAILS</button>
-</div>
-<br><br>
 <div>Results
 <div class="alert alert-primary" role="alert">
 <?php 
 $jsondata = array();
 $message = $this->session->flashdata('message_name'); 
 
-if(!empty($message) && $roption == 4){
+if(!empty($message)){
 
 //echo $result;
 //echo $message;
@@ -69,6 +71,7 @@ print_r($jsondata);
 
 
 $jsondata = json_decode($jsondata['response'], true);
+//$jsondata = json_decode($jsondata['Record'], true);
 echo "<pre>";
 print_r($jsondata);
 echo "</pre>";
@@ -77,6 +80,26 @@ echo "</pre>";
 
 ?>
 </div>
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+<?php foreach($jsondata as $result) : ?>
+  <tr>
+        <td><?php echo $result['Key']; ?></td>
+        <td><?php echo $result['Record']['model']; ?></td>
+    </tr>
+<?php endforeach; ?>
+</table>
 
       <div class="row" id="ops">
 
