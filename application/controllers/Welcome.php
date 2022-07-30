@@ -30,7 +30,7 @@ class Welcome extends CI_Controller {
 	    }
 
 
-	function index1()
+	function home()
 	{
 		$this->load->view('home', $data);
 	}
