@@ -32,7 +32,7 @@ class Main extends CI_Controller {
 
 	function home()
 	{
-		$this->load->view('home', $data);
+		$this->load->view('home');
 	}
 	
 	function index()
@@ -130,7 +130,7 @@ if($roption == 4){
          $this->load->view('action', $data);
 	 
         } else {
-	       $this->load->view('action');
+	       $this->load->view('home');
        }
      }
 
