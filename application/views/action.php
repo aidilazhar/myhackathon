@@ -105,7 +105,7 @@ echo "</pre>";
 
         <div class="col-md-12 order-md-1">
 		<h4 class="mb-3">Blockchain Application</h4>
-		<form action="<?php echo base_url(); ?>myhackathon/index.php/welcome/action" method="POST" enctype="multipart/form-data">
+		<form action="<?php echo base_url(); ?>main/action" method="POST" enctype="multipart/form-data">
 
 		<div class="form-check">
              <input class="form-check-input" type="radio" name="roption" id="flexRadioDefault1" value = "1">
